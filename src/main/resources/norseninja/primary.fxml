@@ -78,8 +78,8 @@
             </HBox>
             <HBox alignment="TOP_CENTER" spacing="10.0">
                <children>
-                  <Button fx:id="drawButton" mnemonicParsing="false" onAction="#drawButtonClicked" text="Draw" />
-                  <Button fx:id="holdButton" mnemonicParsing="false" onAction="#HoldButtonClicked" text="Hold" />
+                  <Button fx:id="drawButton" disable="true" mnemonicParsing="false" onAction="#drawButtonClicked" text="Draw" />
+                  <Button fx:id="holdButton" disable="true" mnemonicParsing="false" onAction="#HoldButtonClicked" text="Hold" />
                   <Button fx:id="newGameButton" mnemonicParsing="false" onAction="#newGameButtonClicked" text="New Game" />
                </children>
             </HBox>
