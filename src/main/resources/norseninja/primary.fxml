@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="norseninja.GameClient">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+               <content>
+                  <TilePane fx:id="playerCardImagePane" hgap="2.0" prefWidth="390.0" vgap="2.0" />
+               </content>
+            </ScrollPane>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+               <content>
+                  <TilePane fx:id="dealerCardImagePane" hgap="2.0" prefWidth="390.0" vgap="2.0" />
+               </content>
+            </ScrollPane>
+         </items>
+      </SplitPane>
+   </center>
+   <bottom>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="TOP_CENTER">
+               <children>
+                  <TextArea fx:id="log" editable="false" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" spacing="50.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Hand Value:" />
+                        <TextArea fx:id="playerHandValueArea" editable="false" maxHeight="25.0" maxWidth="40.0" minHeight="25.0" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" style="-fx-background-color: TRANSPARENT;" text="0" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Dealer Value:" />
+                        <TextArea fx:id="dealerHandValueArea" editable="false" maxHeight="25.0" maxWidth="40.0" minHeight="25.0" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" style="-fx-background-color: TRANSPARENT;" text="0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" spacing="10.0">
+               <children>
+                  <Button fx:id="drawButton" mnemonicParsing="false" onAction="#drawButtonClicked" text="Draw" />
+                  <Button fx:id="holdButton" mnemonicParsing="false" onAction="#HoldButtonClicked" text="Hold" />
+                  <Button fx:id="newGameButton" mnemonicParsing="false" onAction="#newGameButtonClicked" text="New Game" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <padding>
+      <Insets bottom="10.0" left="4.0" right="4.0" />
+   </padding>
+</BorderPane>
